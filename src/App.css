@@ -1,0 +1,44 @@
+::root {
+  --c1: #515D73;
+  --c2: #F2CCB6;
+  --c3: #F2785C;
+  --c4: #8C4F49;
+  --c5: #0D0D0D;
+  --c7: #E9EDF6;
+}
+body {
+  background-color: antiquewhite;
+}
+.start {
+  background-color: antiquewhite;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.start__img {
+  width: 285px;
+}
+.start__h1 {
+  font-size: 1.25em;
+  font-weight: 600;
+  text-align: justify;
+}
+.start__div {
+  padding: 0.5rem;
+  border-radius: 25px;
+  border: solid 1px rgb(36, 39, 40);
+
+}
+.div__input {
+  /* padding: 0.75rem; */
+  /* border-radius: 25px; */
+}
+
+.div__btn {
+  /* border-radius: 50%;
+  padding: 0.75rem;
+  width: 45px;
+  height: 45px; */
+}
