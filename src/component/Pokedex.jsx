@@ -23,13 +23,18 @@ const Pokedex = () => {
       .then((res) => setPokeType(res.data.results));
   }, []);
 
-  console.log(pokeType);
+  // console.log(pokeType);
 
   const searchPokemon = () => {
     navigate(`/pokedex/${pokeName.toLowerCase()}`)
   }
 
-  // console.log(pokemon);
+  const filterType = (e) => {
+    const url = e.target.value;
+    axios.get(url)
+        .then((res)=> setPokemons(res.data.pokemon));
+  }
+  // console.log(pokemons);
   return (
     <div className='pokedex'>
       <header className="pokedex__header">
@@ -45,12 +50,15 @@ const Pokedex = () => {
         />
         <button onClick={searchPokemon}>Search</button>
 
-        <select name="All Pokemon" id="">
+        <select onChange={filterType} name="" id="">
           {
             pokeType.map((type)=>(
-              
-              <option key={type.url} value="">{type.name}</option>
-              
+              <option 
+                value={type.url} 
+                key={type.name}
+              >
+                {type.name}
+              </option>
             ))
           }
         </select>
@@ -58,7 +66,9 @@ const Pokedex = () => {
         <ul className='pokedex__ul'>
           {
             pokemons.map((pokemon) => (
-              <PokemonCard url={pokemon.url} />
+              <PokemonCard 
+                url={pokemon.url ? pokemon.url : pokemon.pokemon?.url}  
+                key={pokemon.url ? pokemon.url : pokemon.pokemon?.url}/>
             ))
           }
         </ul>

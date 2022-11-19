@@ -26,7 +26,7 @@ const PokemonDetail = () => {
         <ul>
           {
             detailsPoke.types?.map((typePoke) => (
-            <li>
+            <li key={typePoke.type.url}>
               <p>{typePoke.type.name}</p>
             </li>
             ))
