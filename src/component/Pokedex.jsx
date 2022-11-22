@@ -56,7 +56,7 @@ const Pokedex = () => {
               <option 
                 value={type.url} 
                 key={type.name}
-              >
+              > 
                 {type.name}
               </option>
             ))

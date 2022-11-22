@@ -23,7 +23,7 @@ const InputName = () => {
         alt="entrenadores pokemon"
         loading='lazy'
       />
-      <p className='start__h1'>Enter your name to get starded</p>
+      <h1 className='start__h1'>Enter your name to get starded</h1>
       <div className="start__div">
         <input
           className='div__input'
@@ -35,6 +35,7 @@ const InputName = () => {
           className='div__btn'
           onClick={enterName}>
           Enter
+          <i className="fa-solid fa-angle-right"></i>
         </button>
       </div>
     </div>
