@@ -50,3 +50,8 @@ body {
   cursor: pointer;
 }
 /*pagina Nª 2 --> Pokedex*/
+.pokedex {}
+.pokedex__header {}
+.header__img {
+  width: 300px;
+}

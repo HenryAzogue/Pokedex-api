@@ -17,13 +17,14 @@ const InputName = () => {
 
   return (
     <div className='start'>
+      <h1 className='start__h1'>Hello coach!</h1>
       <img
         className='start__img'
         src={image.img}
         alt="entrenadores pokemon"
         loading='lazy'
       />
-      <h1 className='start__h1'>Enter your name to get starded</h1>
+      <h1 className='start__h1'>To get started, enter your name</h1>
       <div className="start__div">
         <input
           className='div__input'
