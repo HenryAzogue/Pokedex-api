@@ -1,7 +1,7 @@
 import entrenador from './image/entrenador-pokemon.png'
-import logo from './image/logo_pokedex.png'
+import wallpaper from './image/wallpaper_logo.png'
 
 export default {
   "img": entrenador,
-  "img_logo": logo
+  "img_background": wallpaper
 }

@@ -40,7 +40,7 @@ const Pokedex = () => {
 
   //pagination
   const [page, setPage] = useState(1);                                     //1
-  const pokemonPerPage = 5;                                                 //10
+  const pokemonPerPage = 10;                                                 //10
   const lastIndex = page * pokemonPerPage;                                  //L:1*10 = 10
   const firstIndex = lastIndex - pokemonPerPage;                            //FI: L-10= 0
   const pokemonPagination = pokemons.slice(firstIndex, lastIndex);
@@ -51,65 +51,82 @@ const Pokedex = () => {
   for (let i = 1; i <= totalPages; i++) {
     numbers.push(i);
   }
-  
 
   return (
     <div className='pokedex'>
       <header className="pokedex__header">
-        <img className='header__img' src={image.img_logo} alt="" />
-        <h2 className='header__h2'>Pokedex</h2>
-        <p className='header__p'>Welcome {userName}!</p>
+        <img className='header__img' src={image.img_background} alt="wallpapwe logo" loading='lazy' />
       </header>
-      <div>
-        <input
-          type="text"
-          placeholder='Search pokemon'
-          value={pokeName}
-          onChange={(e) => setPokeName(e.target.value)}
-        />
-        <button onClick={searchPokemon}>Search</button>
 
-        <select onChange={filterType} name="" id="">
-          {
-            pokeType.map((type) => (
-              <option
-                value={type.url}
-                key={type.name}
-              >
-                {type.name}
-              </option>
-            ))
-          }
-        </select>
-      </div>
+      <section className='pokedex__section'>
+        <h2 className='section__h2'>
+          Welcome {userName}! here you can find your favorite pokemons
+        </h2>
+        <div className="section__div">
+          <div className='div__search'>
+            <input
+              className='div__input'
+              type="text"
+              placeholder='Search pokemon by name or id'
+              value={pokeName}
+              onChange={(e) => setPokeName(e.target.value)}
+            />
+            <button
+              className='div__btn'
+              onClick={searchPokemon}
+            >
+              Search
+            </button>
+          </div>
+          <select
+            className='div__select'
+            onChange={filterType} name="" id="">
+            {
+              pokeType.map((type) => (
+                <option
+                  className='select__option'
+                  value={type.url}
+                  key={type.name}
+                >
+                  {type.name}
+                </option>
+              ))
+            }
+          </select>
+        </div>
+        <div className="div_pagination">
+          <ul className='pagination__ul'>
+            <button
+              className='ul__btn'
+              onClick={() => setPage(page - 1)}
+              disabled={page === 1}
+            >
+              <i className="fa-solid fa-caret-left"></i>
+            </button>
 
-      <div className="div_pagination">
-        <button
-          onClick={() => setPage(page - 1)}
-          disabled={page === 1}
-        >
-          <i className="fa-solid fa-circle-arrow-left"></i>
-        </button>
-        <ul>
-          {
-            numbers.map((number) => (
-              <li key={number}>
-                <button onClick={() => setPage(number)}
-                  href="!#">
-                  {number}
-                </button>
-              </li>
-            ))
-          }
-        </ul>
-        <button
-          onClick={() => setPage(page + 1)}
-          disabled={page === totalPages}
-        >
-          <i className="fa-solid fa-circle-arrow-right"></i>
-        </button>
-      </div>
+            {
+              numbers.map((number) => (
+                <li className='ul__li' key={number}>
+                  <button
+                    className='li__btn'
+                    onClick={() => setPage(number)}
+                  >
+                    {number}
+                  </button>
+                </li>
+              ))
+            }
+            <button
+              className='ul__btn'
+              onClick={() => setPage(page + 1)}
+              disabled={page === totalPages}
+            >
+              <i className="fa-solid fa-caret-left"></i>
+            </button>
+          </ul>
+        </div>
 
+      </section>
       <ul className='pokedex__ul'>
         {
           pokemonPagination?.map((pokemon) => (

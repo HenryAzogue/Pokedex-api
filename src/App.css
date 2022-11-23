@@ -1,15 +1,19 @@
 :root {
-  --c1: #515D73;
-  --c2: #F2CCB6;
-  --c3: #F2785C;
-  --c4: #8C4F49;
-  --c5: #0D0D0D;
-  --c7: #E9EDF6;
+  --c1: #8089A6;
+  --c2: #B0C1D9;
+  --c3: #F5F6F5;
+  --c4: #9FBF88;
+  --c5: #6A6766;
+  --c7: #364235;
   --txt1: 18px;
   --txt2: 16px;
 }
 body {
   background-color: var(--c2);
+  margin: 0;
+  padding: 0;
+  /* background-image: url("./assets/image/wallpapersden.jpg"); */
+
 }
 /*pagina Nª 1 --> InputName*/
 .start {
@@ -34,7 +38,7 @@ body {
   border-radius: 25px;
   border: none;
 }
-.div__input {
+.start__input {
   background: none;
   border: none;
   color: var(--c7);
@@ -42,7 +46,7 @@ body {
   font-weight: 700;
   padding: 0.25rem; 
 }
-.div__btn {
+.start__btn {
   background: none;
   color: var(--c1);
   font-size: 1em;
@@ -53,5 +57,132 @@ body {
 .pokedex {}
 .pokedex__header {}
 .header__img {
-  width: 300px;
+  width: 100%;
 }
+
+.pokedex__section {
+  margin: 0 10%;
+}
+.section__h2 {
+  color: var(--c7);
+  font-size: 1.5em;
+  text-align: center;
+  padding-bottom: 1.25rem;
+}
+.section__div {
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+.div__search {
+  background-color: var(--c3);
+  padding: 0.5rem;
+  border-radius: 25px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80%;
+}
+.div__input {
+  font-variant: small-caps;
+  letter-spacing: 0.1rem;
+  text-align: center;
+
+  background: none;
+  border: none;
+  color: var(--c7);
+  outline: 0px;
+  font-weight: 700;
+  padding: 0.25rem; 
+  width: 88%;
+}
+.div__btn {
+  background-color: var(--c2);
+  background: none;
+  border: none;
+  color: var(--c1);
+  font-variant: small-caps;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.div__select {
+  border: none;
+  color: var(--c1);
+  text-align: center;
+  width: 15%;
+  padding: 0.4rem 0;
+  border-radius: 15px;
+}
+.select__option {
+  color: var(--c3);
+  background-color: var(--c1);
+  font-weight: 600;
+}
+.div__pagination {
+  background-color: pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+.pagination__ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.ul__btn {
+  color: var(--c1);
+  padding: 0.5rem;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+}
+.ul__li {
+  list-style-type: none;
+}
+.li__btn{
+  color: var(--c1);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin: 0 0.15rem;
+  padding: 0.5rem;
+}
+
+.pokedex__ul {
+  background-color: pink;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px ,1fr));
+  gap: 0.85rem;
+  margin: 0 2rem;
+}
+
+/*Nº3 PokemonCard*/
+.card {
+  margin-left: 2rem;
+  /* background-color: pink; */
+}
+.div__card {
+  border-radius: 10px;
+  border: solid 1px var(--c1);
+  text-decoration: none;
+}
+.div__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card__img {
+  width: 100%;
+}
+.card__name {}

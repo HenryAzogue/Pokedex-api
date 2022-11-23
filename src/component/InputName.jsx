@@ -27,13 +27,13 @@ const InputName = () => {
       <h1 className='start__h1'>To get started, enter your name</h1>
       <div className="start__div">
         <input
-          className='div__input'
+          className='start__input'
           type="text"
           onChange={e => setUserName(e.target.value)}
           value={userName}
         />
         <button
-          className='div__btn'
+          className='start__btn'
           onClick={enterName}>
           Enter
           <i className="fa-solid fa-angle-right"></i>

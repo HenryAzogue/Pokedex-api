@@ -12,10 +12,16 @@ const PokemonCard = ({ url }) => {
 
   // console.log(pokeCard);
   return (
-    <Link to={`/pokedex/${pokeCard.id}`}>
-      <p>{pokeCard.name}</p>
-      <img src={pokeCard.sprites?.front_default} alt="" />
+    <div className='card'>   
+    <Link className="div__card" to={`/pokedex/${pokeCard.id}`}>
+  
+        <img 
+          className='card__img'
+          src={pokeCard.sprites?.front_default} alt="Pokemon" />
+        <h2 className='card__name'>{pokeCard.name}</h2>
+
     </Link>
+    </div>
   );
 };
 
